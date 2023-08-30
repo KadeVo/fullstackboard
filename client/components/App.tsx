@@ -1,12 +1,20 @@
+import Header from './Header.tsx'
+import Footer from './Footer.tsx'
+import SearchFilter from './SearchFilter.tsx'
+
+
 function App() {
   return (
-    <>
-      <header className="header">
-        <h1>My Collection</h1>
-      </header>
-      <section className="main">{/* add your code here */}</section>
-    </>
-  )
+    <div className="container">
+      <Header />
+      <main>
+        <SearchFilter />
+      </main>
+      <Footer />
+    </div>
+  );
 }
+
+
 
 export default App
