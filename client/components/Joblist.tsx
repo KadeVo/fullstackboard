@@ -7,9 +7,13 @@ function JobsList() {
     const [jobs, setJobs] = useState<Job[]>([]);
 
     useEffect(() => {
-        getJobs().then((data) => {
-            return setJobs(data);
-        });
+        getJobs()
+            .then((data) => {
+                setJobs(data);
+            })
+            .catch((error) => {
+                console.error('Error fetching jobs:', error);
+            });
     }, []);
 
     const handleDelete = async (id: number) => {

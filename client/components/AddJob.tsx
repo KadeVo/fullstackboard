@@ -24,7 +24,7 @@ export default function JobForm() {
         }
     });
 
-    function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    function handleChange(event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) {
         const { name, value } = event.target;
         const newForm = { ...form, [name]: value };
         setForm(newForm);
