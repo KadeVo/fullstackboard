@@ -3,7 +3,7 @@ import AddJobForm from './AddJob.tsx';
 function CreateJobPage() {
     return (
         <div>
-            <h2>Create a New Job Listing</h2>
+            <h1>Create a New Job Listing</h1>
             <AddJobForm />
         </div>
     );

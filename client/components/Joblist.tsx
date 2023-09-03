@@ -27,11 +27,11 @@ function JobsList() {
 
     return (
         <div>
-            <h2>Jobs List</h2>
+            <h1>Jobs List</h1>
             <ul>
                 {jobs.map((job) => (
                     <li key={job.id}>
-                        <h3>{job.title}</h3>
+                        <h2>{job.title}</h2>
                         <p>Location: {job.location}</p><br></br>
                         <p>Job Description: <br></br><br></br>{job.description}</p><br></br>
                         <button onClick={() => handleDelete(job.id)}>Delete</button>
