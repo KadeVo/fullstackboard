@@ -7,6 +7,12 @@ export interface Job {
 
 }
 
+export interface JobData {
+    title: string;
+    location?: string;
+    description: string;
+}
+
 export interface User {
     id: number;
     username: string;

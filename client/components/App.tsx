@@ -2,7 +2,7 @@ import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import SearchFilter from './SearchFilter.tsx'
 import JobsList from './Joblist.tsx';
-
+import AddJobForm from './AddJob.tsx';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <main>
         <SearchFilter />
         <JobsList />
+        <AddJobForm />
       </main>
       <Footer />
     </div>
