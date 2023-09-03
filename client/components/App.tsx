@@ -1,23 +1,32 @@
-import Header from './Header.tsx'
-import Footer from './Footer.tsx'
-import SearchFilter from './SearchFilter.tsx'
-import JobsList from './Joblist.tsx';
-import AddJobForm from './AddJob.tsx';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Make sure to import Routes
+
+import HomePage from './Home';
+import CreateJobPage from './CreateJobPage';
 
 function App() {
   return (
-    <div className="container">
-      <Header />
-      <main>
-        <SearchFilter />
-        <JobsList />
-        <AddJobForm />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="container">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/create-job">Create a new Job listing</Link>
+            </li>
+          </ul>
+        </nav>
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/create-job" element={<CreateJobPage />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
-
-
-export default App
+export default App;

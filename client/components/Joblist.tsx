@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getJobs, deleteJob } from '../apis/jobapi';
-import { JobData } from '../../models/types.ts';
+import { Job, JobData } from '../../models/types.ts';
 
 function JobsList() {
     const [jobs, setJobs] = useState([]);
