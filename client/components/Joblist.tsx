@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getJobs, deleteJob } from '../apis/jobapi';
-import { Job, JobData } from '../../models/types.ts';
+import { Job } from '../../models/types.ts';
+
 
 function JobsList() {
-    const [jobs, setJobs] = useState([]);
+    const [jobs, setJobs] = useState<Job[]>([]);
 
     useEffect(() => {
         getJobs().then((data) => {
@@ -11,7 +12,7 @@ function JobsList() {
         });
     }, []);
 
-    const handleDelete = async (id) => {
+    const handleDelete = async (id: number) => {
         try {
             await deleteJob(id);
             setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id));
