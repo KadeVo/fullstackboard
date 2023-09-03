@@ -39,9 +39,10 @@ button {
 }
 
 .footer {
+  color: black;
   text-align: center;
   padding: 10px;
-  background-color: #f0f0f0;
+  background-color: #ede7e7;
 }
 
 /* Input & Button */
@@ -93,7 +94,7 @@ button {
 .search-button {
   padding: 8px 15px;
   /* Adjust padding to match input field */
-  background-color: #4285f4;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 25px;

@@ -8,7 +8,7 @@ function JobsList() {
 
     useEffect(() => {
         getJobs().then((data) => {
-            setJobs(data);
+            return setJobs(data);
         });
     }, []);
 
@@ -28,7 +28,8 @@ function JobsList() {
                 {jobs.map((job) => (
                     <li key={job.id}>
                         <h3>{job.title}</h3>
-                        <p>{job.description}</p>
+                        <p>Location: {job.location}</p><br></br>
+                        <p>Job Description: <br></br><br></br>{job.description}</p><br></br>
                         <button onClick={() => handleDelete(job.id)}>Delete</button>
                     </li>
                 ))}

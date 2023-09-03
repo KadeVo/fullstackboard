@@ -1,5 +1,6 @@
 import connection from "./connection";
-import { Job, Company, Application, User } from '../../models/types.ts';
+import { Job } from '../../models/types.ts';
+// import { Company, Application, User } from '../../models/types.ts'; 
 
 
 export async function getAllJobs(): Promise<Job[]> {

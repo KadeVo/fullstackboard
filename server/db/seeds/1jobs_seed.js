@@ -8,14 +8,14 @@ export async function seed(knex) {
       title: 'Frontend Developer',
       location: 'New York',
       description: 'Lorem ipsum dolor sit amet...',
-      company_id: 1,
+      company_id: 1
     },
     {
       title: 'Backend Developer',
       location: 'San Francisco',
       description: 'Consectetur adipiscing elit...',
-      company_id: 2,
+      company_id: 2
     },
 
   ]);
-};
+}

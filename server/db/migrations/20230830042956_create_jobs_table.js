@@ -11,7 +11,7 @@ export function up(knex) {
         table.integer('company_id').unsigned().references('id').inTable('companies');
         table.timestamps(true, true);
     })
-};
+}
 
 /**
  * @param { import("knex").Knex } knex
@@ -19,4 +19,4 @@ export function up(knex) {
  */
 export function down(knex) {
     return knex.schema.dropTable('jobs')
-};
+}

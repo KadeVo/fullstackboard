@@ -1,4 +1,3 @@
-import React from 'react';
 import AddJobForm from './AddJob.tsx';
 
 function CreateJobPage() {

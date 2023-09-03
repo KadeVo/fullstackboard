@@ -10,7 +10,7 @@ export function up(knex) {
         // table.string('password').notNullable();
         table.timestamps(true, true);
     })
-};
+}
 
 /**
  * @param { import("knex").Knex } knex
@@ -18,4 +18,4 @@ export function up(knex) {
  */
 export function down(knex) {
     return knex.schema.dropTable('users')
-};
+}

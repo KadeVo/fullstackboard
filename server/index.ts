@@ -1,6 +1,6 @@
 import server from './server.ts'
-import { createRoot } from 'react-dom/client'
-import { RouterProvider } from 'react-router-dom'
+// import { createRoot } from 'react-dom/client'
+// import { RouterProvider } from 'react-router-dom'
 // import { router } from './routes/router.tsx'
 
 

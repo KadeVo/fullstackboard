@@ -13,4 +13,4 @@ export async function seed(knex) {
       user_id: 2,
     },
   ]);
-};
+}

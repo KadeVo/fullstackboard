@@ -9,7 +9,7 @@ export function up(knex) {
         table.string('industry');
         table.timestamps(true, true);
     })
-};
+}
 
 /**
  * @param { import("knex").Knex } knex
@@ -17,4 +17,4 @@ export function up(knex) {
  */
 export function down(knex) {
     return knex.schema.dropTable('companies')
-};
+}

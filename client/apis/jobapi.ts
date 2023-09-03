@@ -1,5 +1,7 @@
 import request from 'superagent'
-import { Job, Company, Application, User } from '../../models/types.ts';
+import { Job } from '../../models/types.ts';
+// Import below when ready - Clearing for lint
+// import  Company, Application, User from '../../models/types.ts'
 
 const rootUrl = '/api/v1/jobs'
 
