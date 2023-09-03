@@ -1,6 +1,7 @@
 import Header from './Header.tsx'
 import Footer from './Footer.tsx'
 import SearchFilter from './SearchFilter.tsx'
+import JobsList from './Joblist.tsx';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <main>
         <SearchFilter />
+        <JobsList />
       </main>
       <Footer />
     </div>
