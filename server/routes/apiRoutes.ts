@@ -24,7 +24,7 @@ router.post('/jobs', async (req, res) => {
 
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/jobs/:id', async (req, res) => {
     try {
         const id = Number(req.params.id)
         const deleteJob = await db.deleteJobById(id)
