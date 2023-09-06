@@ -1,39 +1,44 @@
-import { useState, useEffect } from 'react';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { getJobs, deleteJob } from '../apis/jobapi';
 import { Job } from '../../models/types.ts';
 
-
 function JobsList() {
-    const [jobs, setJobs] = useState<Job[]>([]);
+    const { data, isLoading, error } = useQuery(['jobs'], getJobs);
+    const queryClient = useQueryClient();
 
-    useEffect(() => {
-        getJobs()
-            .then((data) => {
-                setJobs(data);
-            })
-            .catch((error) => {
-                console.error('Error fetching jobs:', error);
-            });
-    }, []);
+    const deleteMutation = useMutation(deleteJob, {
+        onSuccess: async () => {
+            const currentJobs: Job[] | undefined = queryClient.getQueryData([
+                'jobs',
+            ]);
+        },
+    });
 
     const handleDelete = async (id: number) => {
         try {
-            await deleteJob(id);
-            setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id));
+            await deleteMutation.mutateAsync(id);
         } catch (error) {
             console.error('Error deleting job:', error);
         }
     };
 
+    if (error) {
+        return <div>Something went wrong</div>;
+    }
+
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div>
             <h1>Jobs List</h1>
             <ul>
-                {jobs.map((job) => (
+                {data?.map((job) => (
                     <li key={job.id}>
                         <h2>{job.title}</h2>
-                        <p>Location: {job.location}</p><br></br>
-                        <p>Job Description: <br></br><br></br>{job.description}</p><br></br>
+                        <p>Location: {job.location}</p><br />
+                        <p>Job Description: <br /><br />{job.description}</p><br />
                         <button onClick={() => handleDelete(job.id)}>Delete</button>
                     </li>
                 ))}
