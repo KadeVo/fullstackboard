@@ -24,16 +24,18 @@ router.post('/jobs', async (req, res) => {
 
 })
 
+
 router.delete('/jobs/:id', async (req, res) => {
     try {
-        const id = Number(req.params.id)
-        const deleteJob = await db.deleteJobById(id)
-        res.json(deleteJob)
+        const id = Number(req.params.id);
+        await db.deleteApplicationsByJobId(id);
+        const deleteJobResult = await db.deleteJobById(id);
+        res.json(deleteJobResult);
     } catch (error) {
+        console.error(error);
         res.status(500).json({ message: 'Something went wrong' });
     }
-
-})
+});
 
 
 export default router;

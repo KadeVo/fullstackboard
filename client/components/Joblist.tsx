@@ -6,21 +6,26 @@ function JobsList() {
     const { data, isLoading, error } = useQuery(['jobs'], getJobs);
     const queryClient = useQueryClient();
 
-    const deleteMutation = useMutation(deleteJob, {
-        onSuccess: async () => {
-            const currentJobs: Job[] | undefined = queryClient.getQueryData([
-                'jobs',
-            ]);
-        },
-    });
-
     const handleDelete = async (id: number) => {
         try {
+            console.log('Deleting job with ID:', id);
             await deleteMutation.mutateAsync(id);
+            console.log('Job deleted successfully.');
+            queryClient.invalidateQueries(['jobs']);
         } catch (error) {
             console.error('Error deleting job:', error);
         }
     };
+
+    const deleteMutation = useMutation(deleteJob, {
+        onSuccess: async () => {
+            console.log('Delete mutation success.');
+            const currentJobs: Job[] | undefined = queryClient.getQueryData([
+                'jobs',
+            ]);
+            console.log('Current jobs:', currentJobs);
+        },
+    });
 
     if (error) {
         return <div>Something went wrong</div>;

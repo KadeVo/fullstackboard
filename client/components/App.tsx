@@ -1,7 +1,4 @@
-import { Link, Outlet } from 'react-router-dom'; // Make sure to import Routes
-
-// import HomePage from './Home';
-// import CreateJobPage from './CreateJobPage';
+import { Link, Outlet } from 'react-router-dom';
 
 function App() {
   return (
