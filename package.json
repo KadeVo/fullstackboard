@@ -16,7 +16,8 @@
     "test": "vitest",
     "knex": "knex --knexfile ./server/db/knexfile.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
+    "build:css": "tailwindcss build ./path/to/your/css -o ./path/to/your/output.css"
   },
   "keywords": [
     "fullstack"
@@ -34,7 +35,8 @@
     "express": "^4.17.2",
     "knex": "^2.5.1",
     "sqlite3": "^5.1.6",
-    "superagent": "7.1.1"
+    "superagent": "7.1.1",
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
     "@devacademy/eslint-config": "^1.9.1",
