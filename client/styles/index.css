@@ -1,4 +1,7 @@
-body,
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* body,
 h1,
 p,
 input,
@@ -118,4 +121,4 @@ button {
   margin: 5px;
   border-radius: 25px;
   cursor: pointer;
-}
+} */
