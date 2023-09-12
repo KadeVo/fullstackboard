@@ -8,7 +8,9 @@ function SearchFilter() {
         />
       </div>
       <div className="input-container">
-        <label htmlFor="search">Search for jobs:</label>
+        <label htmlFor="search" className="text-red-600">
+          Search for jobs:
+        </label>
         <input type="text" id="search" placeholder="Enter keywords here" />
       </div>
       <div className="actions-container">
