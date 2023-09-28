@@ -35,20 +35,25 @@ function JobsList() {
 
   return (
     <div>
-      <h1>Jobs List</h1>
+      <h1 className="text-3xl font-semibold mb-4">Jobs List</h1>
       <ul>
         {data?.map((job) => (
-          <li key={job.id}>
-            <h2>{job.title}</h2>
-            <p>Location: {job.location}</p>
-            <br />
-            <p>
+          <li
+            key={job.id}
+            className="mb-6 p-4 border border-gray-300 rounded-md"
+          >
+            <h2 className="text-xl font-semibold mb-2">{job.title}</h2>
+            <p className="mb-2">Location: {job.location}</p>
+            <p className="mb-2">
               Job Description: <br />
-              <br />
               {job.description}
             </p>
-            <br />
-            <button onClick={() => handleDelete(job.id)}>Delete</button>
+            <button
+              onClick={() => handleDelete(job.id)}
+              className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
