@@ -1,8 +1,5 @@
 import connection from './connection'
 import { Job } from '../../models/types.ts'
-import { Knex } from 'knex'
-
-type KnexBuilder = Knex
 
 export async function getAllJobs(): Promise<Job[]> {
   return connection('jobs').select()
